@@ -1,0 +1,36 @@
+class Film:
+    def __init__(self, nama, tahun_rilis, director):
+        self.nama = nama
+        self.tahun_rilis = tahun_rilis
+        self.director = director
+
+    def get_info(self):
+        return f"{self.nama} (dirilis: {self.tahun_rilis}, disutradarai oleh: {self.director})"
+
+class FilmCollection:
+    def __init__(self):
+        self.films = []
+
+    def tambah_film(self, film):
+        self.films.append(film)
+
+    def tampilkan_film(self):
+        for i, film in enumerate(self.films, start=1):
+            print(f"{i}. {film.get_info()}")
+
+def main():
+    koleksi_film = FilmCollection()
+
+    for i in range(5):
+        nama = input(f"Masukkan nama film favorit ke-{i+1}: ")
+        tahun_rilis = input(f"Masukkan tahun rilis film {nama}: ")
+        director = input(f"Masukkan nama director film {nama}: ")
+        
+        film = Film(nama, tahun_rilis, director)
+        koleksi_film.tambah_film(film)
+    
+    print("\nFilm favorit Anda adalah:")
+    koleksi_film.tampilkan_film()
+
+if __name__ == "__main__":
+    main()
