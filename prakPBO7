@@ -1,0 +1,24 @@
+class Dog:
+    def __init__(self, name, breed, age):
+        self.name = name
+        self.breed = breed
+        self.age = age
+
+    def bark(self):
+        return f"{self.name} says Woof!"
+
+    def get_info(self):
+        return f"Name: {self.name}, Breed: {self.breed}, Age: {self.age} years old"
+
+# Membuat beberapa objek dari class Dog
+dog1 = Dog("Buddy", "Golden Retriever", 3)
+dog2 = Dog("Bella", "Labrador", 5)
+dog3 = Dog("Charlie", "Poodle", 2)
+
+# Menampilkan informasi tentang anjing-anjing tersebut
+print(dog1.get_info())
+print(dog2.get_info())
+print(dog3.get_info())
+print(dog1.bark())
+print(dog2.bark())
+print(dog3.bark())
