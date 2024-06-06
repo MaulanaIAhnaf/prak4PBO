@@ -1,0 +1,21 @@
+def display_info(name, nim, hobby):
+    # Membersihkan konsol
+    print("\033[H\033[J", end="")
+
+    # Menampilkan info di atas input bar
+    print("Nama: ", name)
+    print("NIM: ", nim)
+    print("Hobi: ", hobby)
+    print("==================================")
+
+def main():
+    print("Masukkan informasi berikut:")
+    name = input("Nama: ")
+    nim = input("NIM: ")
+    hobby = input("Hobi: ")
+
+    # Memanggil fungsi untuk menampilkan info di atas input bar
+    display_info(name, nim, hobby)
+
+if __name__ == "__main__":
+    main()
