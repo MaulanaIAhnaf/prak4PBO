@@ -1,0 +1,49 @@
+import random
+
+class Praktikan:
+    def __init__(self, nama):
+        self.nama = nama
+        self.nim = self.generate_nim()
+        self.nilai = self.generate_nilai()
+
+    @staticmethod
+    def generate_nim():
+        # Metode statis untuk menghasilkan NIM
+        return f"2024{random.randint(1000, 9999)}"
+
+    @staticmethod
+    def generate_nilai():
+        # Metode statis untuk menghasilkan nilai
+        return random.uniform(60, 100)
+
+    def get_nama(self):
+        return self.nama
+
+    def get_nim(self):
+        return self.nim
+
+    def get_nilai(self):
+        return self.nilai
+
+    def simpan_keluaran(self):
+        # Menyimpan keluaran program ke dalam file
+        with open('keluaran.txt', 'a') as f:
+            f.write(f"Nama: {self.nama}, NIM: {self.nim}, Nilai: {self.nilai:.2f}\n")
+
+# Membuat objek praktikan dan 3 orang teman
+praktikan = Praktikan("Praktikan Utama")
+teman1 = Praktikan("Teman 1")
+teman2 = Praktikan("Teman 2")
+teman3 = Praktikan("Teman 3")
+
+# Menyimpan keluaran masing-masing objek
+praktikan.simpan_keluaran()
+teman1.simpan_keluaran()
+teman2.simpan_keluaran()
+teman3.simpan_keluaran()
+
+# Menampilkan identitas masing-masing
+print(f"Favian: {praktikan.get_nama()}, 021: {praktikan.get_nim()}, Nilai: {praktikan.get_nilai():.2f}")
+print(f"Maulana: {teman1.get_nama()}, 016: {teman1.get_nim()}, Nilai: {teman1.get_nilai():.2f}")
+print(f"Marco: {teman2.get_nama()}, 017: {teman2.get_nim()}, Nilai: {teman2.get_nilai():.2f}")
+print(f"Adilla: {teman3.get_nama()}, 020: {teman3.get_nim()}, Nilai: {teman3.get_nilai():.2f}")
