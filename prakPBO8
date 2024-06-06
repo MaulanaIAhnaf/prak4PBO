@@ -1,0 +1,36 @@
+class Golongan:
+    def __init__(self, nama, gaji):
+        self.nama = nama
+        self.gaji = gaji
+
+    def get_nama(self):
+        return self.nama
+
+    def get_gaji(self):
+        return self.gaji
+
+class Dosen(Golongan):
+    def __init__(self, gaji):
+        super().__init__('DOSEN', gaji)
+
+class Staff(Golongan):
+    def __init__(self, gaji):
+        super().__init__('STAFF', gaji)
+
+class Lainnya(Golongan):
+    def __init__(self, gaji):
+        super().__init__('LAINNYA', gaji)
+
+def main():
+    dosen = Dosen(10000000)  # Gaji untuk DOSEN
+    staff = Staff(5000000)   # Gaji untuk STAFF
+    lainnya = Lainnya(3000000)  # Gaji untuk LAINNYA
+
+    golongan_list = [dosen, staff, lainnya]
+
+    for golongan in golongan_list:
+        print(f"Golongan: {golongan.get_nama()}")
+        print(f"Gaji: Rp {golongan.get_gaji():,.2f}\n")
+
+if __name__ == "__main__":
+    main()
