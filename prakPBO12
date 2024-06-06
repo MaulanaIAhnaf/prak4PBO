@@ -1,0 +1,23 @@
+from datetime import datetime, timedelta
+
+def current_time_in_utc7():
+    # Mendapatkan offset untuk UTC+7 (7 jam di atas UTC)
+    utc_offset = timedelta(hours=7)
+
+    # Mendapatkan waktu saat ini dan menyesuaikannya dengan UTC+7
+    current_time = datetime.utcnow() + utc_offset
+
+    return current_time
+
+def display_current_time_with_details(first_name, last_name, nim):
+    current_time = current_time_in_utc7()
+    current_time_str = current_time.strftime('%Y-%m-%d %H:%M:%S.%f')
+    full_name = f"{first_name} {last_name}"
+    print(f"Nama: {full_name}, NIM: {nim}")
+    print(f"Waktu saat ini (UTC+7): {current_time_str}")
+
+first_name = "Maulana"
+last_name = "Ikhlasul Ahnaf"
+nim = "064002100016"
+
+display_current_time_with_details(first_name, last_name, nim)
