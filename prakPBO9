@@ -1,0 +1,54 @@
+elkom I
+
+class BangunRuang:
+    def hitung_volume(self):
+        pass
+
+class Kubus(BangunRuang):
+    def __init__(self, sisi):
+        self.sisi = sisi
+
+    def hitung_volume(self):
+        return self.sisi ** 3
+
+class Silinder(BangunRuang):
+    def __init__(self, jari_jari, tinggi):
+        self.jari_jari = jari_jari
+        self.tinggi = tinggi
+
+    def hitung_volume(self):
+        return 3.14 * self.jari_jari ** 2 * self.tinggi
+
+class Balok(BangunRuang):
+    def __init__(self, panjang, lebar, tinggi):
+        self.panjang = panjang
+        self.lebar = lebar
+        self.tinggi = tinggi
+
+    def hitung_volume(self):
+        return self.panjang * self.lebar * self.tinggi
+
+if __name__ == "__main__":
+    kubus = Kubus(5)
+    silinder = Silinder(3, 7)
+    balok = Balok(4, 6, 8)
+
+    print("Volume Kubus:", kubus.hitung_volume())
+    print("Volume Silinder:", silinder.hitung_volume())
+    print("Volume Balok:", balok.hitung_volume())
+
+
+elkom II
+
+class p9e2:
+    @staticmethod
+    def methodTambah(x, y=None):
+        if y is None:
+            return x + x
+        else:
+            return x + y
+
+mynum1 = p9e2.methodTambah(8)
+mynum2 = p9e2.methodTambah(4.5, 6.5)
+print("int:", mynum1)
+print("float:", mynum2)
