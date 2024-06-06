@@ -1,0 +1,22 @@
+def full_name_decorator(func):
+    def wrapper(first_name, last_name, nim):
+        full_name = func(first_name, last_name)
+        return f"Full Name: {full_name}, NIM: {nim}"
+    return wrapper
+
+@full_name_decorator
+def get_full_name(first_name, last_name):
+    return f"{first_name} {last_name}"
+
+def get_title(gender):
+    return "Mr." if gender == "male" else "Ms."
+
+first_name = "Maulana"
+last_name = "Ikhlasul Ahnaf"
+gender = "male"  # Gender assumption for title
+nim = "1234567890"
+
+full_name_with_nim = get_full_name(first_name, last_name, nim)
+title = get_title(gender)
+
+print(f"{title} {full_name_with_nim}")
